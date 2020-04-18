@@ -1,0 +1,27 @@
+---
+title: "Analisis COVID-19"
+author: "Antonio Rodriguez"
+date: "18/4/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+library(knitr)
+library(tidyverse)
+use_miniconda()
+```
+
+# Cargar de datos de los usuarios de Kaggle
+
+Los datos se encuentran en [Kaggle](https://www.kaggle.com/imdevskp/corona-virus-report/data). La fecha de comienzo del análisis es el 18 de Abril de 2020, usando la version 81 de la página cargada anteriormente
+
+```{r}
+datos = readr::read_csv("../Datos/covid_19_clean_complete.csv")
+
+datos %>% head(10) %>%  
+  kable()
+
+```
+
